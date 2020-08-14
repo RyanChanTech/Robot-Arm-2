@@ -112,6 +112,12 @@ filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Open File", command=open_file)
 filemenu.add_command(label="Save File", command=save_file)
 menubar.add_cascade(label="File", menu=filemenu)
+
+editmenu = Menu(menubar, tearoff=0)
+editmenu.add_command(label="Clear last position", command=clear_last_positions)
+editmenu.add_command(label="Clear all positions", command=clear_all_positions)
+menubar.add_cascade(label="Edit", menu=editmenu)
+
 helpmenu = Menu(menubar, tearoff=0)
 helpmenu.add_command(label="How to use (printed in console)", command=instructions)
 menubar.add_cascade(label="Help", menu=helpmenu)
