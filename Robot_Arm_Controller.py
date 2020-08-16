@@ -57,7 +57,12 @@ def save_file():
     print("saved file")
 
 def instructions():
-    print("1.) ")
+    print("1.) Set the Arduino's COM port and click Enter. This can be found in Device Manager in Windows")
+    print("2.) Move the arm's servos using the sliders")
+    print("3.) To record a position, click on Record Position")
+    print("4.) To replay the recorded positions, click on Replay Positions")
+    print("\nTo save what you've recorded, got to File > Save File.")
+    print("To open a previously saved file, got to File > Open File.")
 
 window = Tk()
 window.title("Robot Arm Controller 2")
@@ -95,7 +100,7 @@ servo5_slider.place(x=280, y=100)
 servo5_label=Label(window,text="Servo 5")
 servo5_label.place(x=290, y=80)
 
-save_button=Button(window, text="Save Position", command=save_positions)
+save_button=Button(window, text="Record Position", command=save_positions)
 save_button.place(x=10,y=220)
 
 clear_button=Button(window, text="Clear Last Position", command=clear_last_positions)
