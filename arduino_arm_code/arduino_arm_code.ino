@@ -1,5 +1,3 @@
-#include <SoftwareSerial.h>
-
 #include <Servo.h>
 
 Servo servo1;
