@@ -1,3 +1,5 @@
+#include <SoftwareSerial.h>
+
 #include <Servo.h>
 
 Servo servo1;
@@ -18,12 +20,13 @@ void setup() {
 }
 
 void loop() {
-  //read Serial sent from Python interface on computer
-  int i = 0;
   while(Serial.available()){
     String input = Serial.readStringUntil('\n');
-    servoPositions[i] = input.toInt();
-    i++;
+    servoPositions[0] = input.substring(0,3).toInt();
+    servoPositions[1] = input.substring(3,6).toInt();
+    servoPositions[2] = input.substring(6,9).toInt();
+    servoPositions[3] = input.substring(9,12).toInt();
+    servoPositions[4] = input.substring(12,15).toInt();
   }
 
   servo1.write(servoPositions[0]);
