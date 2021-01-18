@@ -13,10 +13,10 @@ def set_port():
     print ("COM port set to: "+com_port)
 
 def send_positions(position):
-    for angle in position:
-        arduino.write(str.encode(str(angle)+"\n"))
-    #print("data sent")
-    time.sleep(0.1)
+    message = "{0:0=3d}".format(position[0])+"{0:0=3d}".format(position[1])+"{0:0=3d}".format(position[2])+"{0:0=3d}".format(position[3])+"{0:0=3d}".format(position[4])+"\n"
+    arduino.write(str.encode(message))
+    print(message, end='')
+    time.sleep(0.2)
 
 saved_positions = []
 
